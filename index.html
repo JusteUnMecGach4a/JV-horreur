@@ -120,11 +120,34 @@
             padding-bottom: 0.5rem;
             font-weight: 400;
             font-size: 1.1rem;
+            text-align: left; /* Aligner le contenu */
         }
 
         .example-list strong {
             color: var(--color-accent);
             font-weight: 700;
+        }
+        
+        /* Styles pour les images et l'alignement dans la liste */
+        .example-item-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* Espacement entre l'image et le texte */
+        }
+
+        .example-item-content p {
+            margin: 0; /* Supprimer la marge par défaut des paragraphes */
+            display: flex;
+            align-items: center;
+            min-height: 50px; /* Assurer l'alignement vertical avec l'image */
+        }
+
+        .example-img {
+            width: 80px;
+            height: 50px;
+            border-radius: 4px;
+            object-fit: cover;
+            border: 1px solid var(--color-accent);
         }
         
         /* Boîte de contenu pour chaque ère */
@@ -259,16 +282,36 @@
                 </section>
             </div>
             
-            <!-- Nouvelle Section : Exemples Clés -->
+            <!-- Nouvelle Section : Exemples Clés avec Images -->
             <section class="intro-section" style="margin-top: 5rem;">
                 <h2 class="era-title" style="border-left: 0; text-align: center; padding-left: 0;">
                     Exemples Clés par Période
                 </h2>
                 <ul class="example-list">
-                    <li><strong>I. L'Ère des Pixels:</strong> <strong>Sweet Home</strong> (1989), <strong>Haunted House</strong> (1982)</li>
-                    <li><strong>II. L'Apogée du Survival:</strong> <strong>Resident Evil</strong> (1996), <strong>Silent Hill</strong> (1999), <strong>Alone in the Dark</strong> (1992)</li>
-                    <li><strong>III. Le Virage Action-Horror:</strong> <strong>Resident Evil 4</strong> (2005), <strong>Dead Space</strong> (2008), <strong>F.E.A.R.</strong> (2005)</li>
-                    <li><strong>IV. Le Retour à la Vulnérabilité:</strong> <strong>Amnesia: The Dark Descent</strong> (2010), <strong>Outlast</strong> (2013), <strong>Resident Evil 7</strong> (2017), <strong>Fear & Hunger</strong> (2018)</li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" src="https://placehold.co/80x50/330000/ff0000?text=8-bit" alt="Illustration de l'ère 8-bit">
+                            <p><strong>I. L'Ère des Pixels:</strong> <strong>Sweet Home</strong> (1989), <strong>Haunted House</strong> (1982)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" src="https://placehold.co/80x50/330000/ff0000?text=3D+Fixed" alt="Illustration 3D à caméra fixe">
+                            <p><strong>II. L'Apogée du Survival:</strong> <strong>Resident Evil</strong> (1996), <strong>Silent Hill</strong> (1999), <strong>Alone in the Dark</strong> (1992)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" src="https://placehold.co/80x50/330000/ff0000?text=Action" alt="Illustration d'un viseur d'action">
+                            <p><strong>III. Le Virage Action-Horror:</strong> <strong>Resident Evil 4</strong> (2005), <strong>Dead Space</strong> (2008), <strong>F.E.A.R.</strong> (2005)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" src="https://placehold.co/80x50/330000/ff0000?text=FPV" alt="Illustration d'une vue à la première personne">
+                            <p><strong>IV. Le Retour à la Vulnérabilité:</strong> <strong>Amnesia: The Dark Descent</strong> (2010), <strong>Outlast</strong> (2013), <strong>Resident Evil 7</strong> (2017), <strong>Fear & Hunger</strong> (2018)</p>
+                        </div>
+                    </li>
                 </ul>
             </section>
 
