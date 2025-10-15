@@ -16,6 +16,7 @@
             --color-text: #e0e0e0; /* Gris clair */
             --color-subtle: #888; /* Gris pour le texte secondaire */
             --color-box: #1a1a1a; /* Gris très sombre pour les cartes */
+            --color-box-border: #330000; /* Bordure sombre pour les sections */
         }
 
         body {
@@ -25,7 +26,7 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7; /* Amélioration de la lisibilité */
         }
 
         /* Conteneur principal pour centrer le contenu */
@@ -78,12 +79,19 @@
             background-color: var(--color-box);
             border-radius: 0.75rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
-            border-left: 5px solid var(--color-subtle);
+            border-left: 5px solid var(--color-accent); /* Changement de couleur pour plus d'impact */
         }
         
         .era-container {
             display: grid;
             gap: 3rem;
+        }
+
+        /* Optimisation de la grille pour les grands écrans */
+        @media (min-width: 768px) {
+            .era-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Section Title Styling - Bordure de "sang" */
@@ -110,17 +118,21 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            display: grid;
+            gap: 1.5rem; /* Augmentation de l'espace entre les jeux */
         }
 
+        /* STYLE POUR CHAQUE ÉLÉMENT DE LISTE */
         .example-list li {
-            font-family: 'Cinzel Decorative', serif;
-            margin-bottom: 0.75rem;
-            color: var(--color-text);
-            border-bottom: 1px dashed rgba(255, 0, 0, 0.3);
-            padding-bottom: 0.5rem;
-            font-weight: 400;
-            font-size: 1.1rem;
-            text-align: left; /* Aligner le contenu */
+            border: 1px solid var(--color-box-border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            background-color: #151515;
+            transition: border-color 0.2s;
+        }
+        
+        .example-list li:hover {
+            border-color: rgba(255, 0, 0, 0.5);
         }
 
         .example-list strong {
@@ -130,24 +142,37 @@
         
         /* Styles pour les images et l'alignement dans la liste */
         .example-item-content {
-            display: flex;
-            align-items: center;
-            gap: 1rem; /* Espacement entre l'image et le texte */
+            display: grid;
+            grid-template-columns: 120px 1fr; /* Colonne fixe plus large pour l'image */
+            align-items: center; 
+            gap: 1.5rem;
+            text-align: left;
         }
 
-        .example-item-content p {
-            margin: 0; /* Supprimer la marge par défaut des paragraphes */
-            display: flex;
-            align-items: center;
-            min-height: 50px; /* Assurer l'alignement vertical avec l'image */
+        .example-item-content .era-label {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.1rem;
+            color: var(--color-subtle);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .example-item-content .game-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem; /* Nom du jeu plus grand */
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+            line-height: 1.3;
         }
 
         .example-img {
-            width: 80px;
-            height: 50px;
+            width: 120px; /* Image plus grande */
+            height: 75px; /* Image plus grande */
             border-radius: 4px;
             object-fit: cover;
-            border: 1px solid var(--color-accent);
+            border: 2px solid var(--color-box-border);
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
         }
         
         /* Boîte de contenu pour chaque ère */
@@ -158,17 +183,17 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s, box-shadow 0.2s;
             text-align: left;
-            border: 1px solid rgba(255, 0, 0, 0.1); /* Bordure très subtile */
+            border: 2px solid var(--color-box-border); /* Bordure définie */
         }
 
         .content-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2); /* Ombre rouge au survol */
+            transform: translateY(-5px); /* Plus grand effet de survol */
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3); /* Ombre rouge plus prononcée */
         }
 
         .content-box p {
             color: var(--color-text);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem; /* Espacement accru entre les paragraphes */
         }
 
         .content-box p:last-child {
@@ -189,7 +214,7 @@
         }
         
         /* Réinitialisation pour les éléments HTML (pour la compatibilité) */
-        h1, h2, p, section, header, footer, main, div {
+        h1, h2, p, section, header, footer, main, div, ul, li {
             box-sizing: border-box;
         }
     </style>
@@ -260,6 +285,9 @@
                         <p>
                             D'autres titres majeurs, comme <strong>Dead Space</strong> (2008), ont suivi cette tendance, offrant des mécaniques de combat innovantes (le démembrement stratégique) et des décors futuristes sous pression. L'accent était mis sur les montées d'adrénaline et l'horreur de science-fiction, souvent au détriment de l'exploration lente et de la gestion de ressources.
                         </p>
+                        <p>
+                            Ce sous-genre a continué d'évoluer en intégrant des systèmes de **monde ouvert et de mouvement**, comme dans **Dying Light** (2015), où l'horreur réside dans la double menace : les combats intenses le jour et la survie désespérée face aux monstres rapides et puissants la nuit, forçant le joueur à utiliser le parkour pour échapper au danger.
+                        </p>
                     </div>
                 </section>
 
@@ -273,7 +301,10 @@
                             L'horreur a retrouvé ses racines de vulnérabilité grâce à la scène indépendante. <strong>Amnesia: The Dark Descent</strong> (2010) a créé un nouveau sous-genre en retirant toute possibilité de combat et en forçant le joueur à fuir et à se cacher. L'horreur devenait une expérience à la <strong>première personne</strong> totalement axée sur la psychologie, l'impuissance et la gestion de la santé mentale.
                         </p>
                         <p>
-                            Ce succès a engendré une vague de jeux similaires (comme <strong>Outlast</strong> en 2013). Même les grandes franchises ont été influencées, avec <strong>Resident Evil 7</strong> (2017) et <strong>Resident Evil Village</strong> qui ont embrassé la vue à la première personne et un retour aux mécanismes de survie et d'exploration, tout en intégrant des graphismes hyper-réalistes.
+                            Ce succès a engendré une vague de jeux similaires (comme <strong>Outlast</strong> en 2013). Le phénomène **Five Nights at Freddy's (FNAF)** (2014) a également redéfini la vulnérabilité en la limitant à un poste fixe, obligeant le joueur à utiliser la surveillance et la gestion des ressources électriques pour repousser des menaces imprévisibles, prouvant qu'un cadre simple peut générer une tension extrême.
+                        </p>
+                        <p>
+                            Même les grandes franchises ont été influencées, avec <strong>Resident Evil 7</strong> (2017) et <strong>Resident Evil Village</strong> qui ont embrassé la vue à la première personne et un retour aux mécanismes de survie et d'exploration, tout en intégrant des graphismes hyper-réalistes.
                         </p>
                         <p>
                             Aujourd'hui, le genre se caractérise par une grande diversité, allant du <i>survival horror</i> lent et angoissant, aux jeux de rôle d'horreur cruels et sans compromis comme <strong>Fear & Hunger</strong>. Ce dernier, avec son style graphique rétro et sa difficulté punitive, représente l'extrême de la vulnérabilité et de la mécanique de la <strong>perte permanente</strong>, où chaque choix, y compris la survie physique (manger, boire, dormir), devient une source d'horreur.
@@ -282,48 +313,172 @@
                 </section>
             </div>
             
-            <!-- Nouvelle Section : Exemples Clés avec Images -->
+            <!-- Nouvelle Section : Exemples Clés avec Images (Mise en page refaite) -->
             <section class="intro-section" style="margin-top: 5rem;">
                 <h2 class="era-title" style="border-left: 0; text-align: center; padding-left: 0;">
                     Exemples Clés par Période
                 </h2>
                 <ul class="example-list">
+                    <!-- I. L'Ère des Pixels -->
                     <li>
                         <div class="example-item-content">
-                            <!-- Image Sweet Home (Lien plus stable) -->
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/7/7a/Hauntedhouse_atari.jpg" 
+                                 alt="Capture d'écran de Haunted House (Atari)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Atari';">
+                            <div>
+                                <span class="era-label">I. L'Ère des Pixels</span>
+                                <p class="game-name"><strong>Haunted House</strong> (1982)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
                             <img class="example-img" 
                                  src="http://www.honestgamers.com/images/assets/12/S/14577/1.jpg" 
                                  alt="Capture d'écran de Sweet Home (1989)"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/80x50/330000/ff0000?text=8-bit';">
-                            <p><strong>I. L'Ère des Pixels:</strong> <strong>Sweet Home</strong> (1989), <strong>Haunted House</strong> (1982) 
-                                <!-- Image Haunted House -->
-                                <img class="example-img" 
-                                 src="https://upload.wikimedia.org/wikipedia/en/7/7a/Hauntedhouse_atari.jpg" 
-                                 alt="Capture d'écran de Haunted House (Atari)"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/80x50/330000/ff0000?text=8-bit-2';">
-                            </p>
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=NES';">
+                            <div>
+                                <span class="era-label">I. L'Ère des Pixels</span>
+                                <p class="game-name"><strong>Sweet Home</strong> (1989)</p>
+                            </div>
                         </div>
                     </li>
+                    <!-- II. L'Apogée du Survival -->
                     <li>
                         <div class="example-item-content">
-                            <!-- Image Resident Evil (Lien plus stable) -->
                             <img class="example-img" 
                                  src="https://images-na.ssl-images-amazon.com/images/I/5152N28P2EL.jpg" 
                                  alt="Couverture du jeu Resident Evil (1996)"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/80x50/330000/ff0000?text=3D+Fixed';">
-                            <p><strong>II. L'Apogée du Survival:</strong> <strong>Resident Evil</strong> (1996), <strong>Silent Hill</strong> (1999), <strong>Alone in the Dark</strong> (1992)</p>
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=PS1';">
+                            <div>
+                                <span class="era-label">II. L'Apogée du Survival</span>
+                                <p class="game-name"><strong>Resident Evil</strong> (1996)</p>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <div class="example-item-content">
-                            <img class="example-img" src="https://placehold.co/80x50/330000/ff0000?text=Action" alt="Illustration d'un viseur d'action">
-                            <p><strong>III. Le Virage Action-Horror:</strong> <strong>Resident Evil 4</strong> (2005), <strong>Dead Space</strong> (2008), <strong>F.E.A.R.</strong> (2005)</p>
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/2/22/Silent_Hill_cover_art.jpg" 
+                                 alt="Couverture de Silent Hill (1999)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Brouillard';">
+                            <div>
+                                <span class="era-label">II. L'Apogée du Survival</span>
+                                <p class="game-name"><strong>Silent Hill</strong> (1999)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- III. Le Virage Action-Horror -->
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/e/e0/Resident_Evil_4_box_art.jpg" 
+                                 alt="Couverture de Resident Evil 4 (2005)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Action';">
+                            <div>
+                                <span class="era-label">III. Le Virage Action-Horror</span>
+                                <p class="game-name"><strong>Resident Evil 4</strong> (2005)</p>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <div class="example-item-content">
-                            <img class="example-img" src="https://placehold.co/80x50/330000/ff0000?text=FPV" alt="Illustration d'une vue à la première personne">
-                            <p><strong>IV. Le Retour à la Vulnérabilité:</strong> <strong>Amnesia: The Dark Descent</strong> (2010), <strong>Outlast</strong> (2013), <strong>Resident Evil 7</strong> (2017), <strong>Fear & Hunger</strong> (2018)</p>
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/3/36/Dead_Space_cover.png" 
+                                 alt="Couverture de Dead Space (2008)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Sci-Fi';">
+                            <div>
+                                <span class="era-label">III. Le Virage Action-Horror</span>
+                                <p class="game-name"><strong>Dead Space</strong> (2008)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Nouvel Exemple : Dying Light -->
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/d/dc/Dying_Light_cover_art.jpg" 
+                                 alt="Couverture de Dying Light (2015)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Parkour';">
+                            <div>
+                                <span class="era-label">III. Le Virage Action-Horror</span>
+                                <p class="game-name"><strong>Dying Light</strong> (2015)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- IV. Le Retour à la Vulnérabilité -->
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/2/23/Amnesia_The_Dark_Descent_Coverart.png" 
+                                 alt="Couverture d'Amnesia: The Dark Descent (2010)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Impuissance';">
+                            <div>
+                                <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
+                                <p class="game-name"><strong>Amnesia: The Dark Descent</strong> (2010)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Nouvel Exemple : Five Nights at Freddy's (FNAF) -->
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/3/36/Five_Nights_at_Freddy%27s_Cover_Art.jpg" 
+                                 alt="Couverture de Five Nights at Freddy's (2014)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=FNAF';">
+                            <div>
+                                <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
+                                <p class="game-name"><strong>FNAF</strong> (2014)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/8/82/Outlast_cover.png" 
+                                 alt="Couverture d'Outlast (2013)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Caméra';">
+                            <div>
+                                <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
+                                <p class="game-name"><strong>Outlast</strong> (2013)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/9/90/Granny_video_game_cover_art.png" 
+                                 alt="Couverture de Granny (2017)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Granny';">
+                            <div>
+                                <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
+                                <p class="game-name"><strong>Granny</strong> (2017)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://play-lh.googleusercontent.com/FwL82U2yqRk_dJ6sL-7gNqP-x2P_j9iO6q_cE_pW6qOQ5pYt8g-q6Y8xP-Q8GgP5w=w526-h296-n-rw" 
+                                 alt="Couverture de The Ghost (2021)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Co-op';">
+                            <div>
+                                <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
+                                <p class="game-name"><strong>The Ghost</strong> (2021)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="example-item-content">
+                            <img class="example-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/en/3/36/Fear_%26_Hunger_Cover.jpg" 
+                                 alt="Couverture de Fear & Hunger (2018)"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=RPG';">
+                            <div>
+                                <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
+                                <p class="game-name"><strong>Fear & Hunger</strong> (2018)</p>
+                            </div>
                         </div>
                     </li>
                 </ul>
