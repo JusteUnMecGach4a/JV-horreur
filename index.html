@@ -104,7 +104,29 @@
                 font-size: 2rem;
             }
         }
+        
+        /* Liste des exemples pour la nouvelle section */
+        .example-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
+        .example-list li {
+            font-family: 'Cinzel Decorative', serif;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+            border-bottom: 1px dashed rgba(255, 0, 0, 0.3);
+            padding-bottom: 0.5rem;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+
+        .example-list strong {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+        
         /* Boîte de contenu pour chaque ère */
         .content-box {
             padding: 1.5rem;
@@ -236,6 +258,20 @@
                     </div>
                 </section>
             </div>
+            
+            <!-- Nouvelle Section : Exemples Clés -->
+            <section class="intro-section" style="margin-top: 5rem;">
+                <h2 class="era-title" style="border-left: 0; text-align: center; padding-left: 0;">
+                    Exemples Clés par Période
+                </h2>
+                <ul class="example-list">
+                    <li><strong>I. L'Ère des Pixels:</strong> <strong>Sweet Home</strong> (1989), <strong>Haunted House</strong> (1982)</li>
+                    <li><strong>II. L'Apogée du Survival:</strong> <strong>Resident Evil</strong> (1996), <strong>Silent Hill</strong> (1999), <strong>Alone in the Dark</strong> (1992)</li>
+                    <li><strong>III. Le Virage Action-Horror:</strong> <strong>Resident Evil 4</strong> (2005), <strong>Dead Space</strong> (2008), <strong>F.E.A.R.</strong> (2005)</li>
+                    <li><strong>IV. Le Retour à la Vulnérabilité:</strong> <strong>Amnesia: The Dark Descent</strong> (2010), <strong>Outlast</strong> (2013), <strong>Resident Evil 7</strong> (2017), <strong>Fear & Hunger</strong> (2018)</li>
+                </ul>
+            </section>
+
         </div>
     </main>
 
