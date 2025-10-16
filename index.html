@@ -17,6 +17,7 @@
             --color-subtle: #888; /* Gris pour le texte secondaire */
             --color-box: #1a1a1a; /* Gris très sombre pour les cartes */
             --color-box-border: #330000; /* Bordure sombre pour les sections */
+            --color-modal-bg: rgba(0, 0, 0, 0.9); /* Fond de modale très sombre */
         }
 
         body {
@@ -129,6 +130,7 @@
             padding: 1rem;
             background-color: #151515;
             transition: border-color 0.2s;
+            cursor: pointer; /* Indique l'interactivité */
         }
         
         .example-list li:hover {
@@ -216,6 +218,61 @@
         /* Réinitialisation pour les éléments HTML (pour la compatibilité) */
         h1, h2, p, section, header, footer, main, div, ul, li {
             box-sizing: border-box;
+        }
+
+        /* MODALE STYLING */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 100; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; 
+            background-color: var(--color-modal-bg);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: var(--color-box);
+            margin: 5% auto; 
+            padding: 2rem;
+            border: 2px solid var(--color-accent);
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .modal-content h3 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-subtle);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .modal-content p {
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        .close-button {
+            color: var(--color-accent);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -326,7 +383,7 @@
                 </h2>
                 <ul class="example-list">
                     <!-- I. L'Ère des Pixels -->
-                    <li>
+                    <li onclick="showRecap('Haunted House (1982)', 'L\'un des tout premiers jeux d\'horreur. Il utilise des graphismes minimalistes (uniquement quelques formes et des yeux) et l\'obscurité pour créer la tension. Le joueur collecte des morceaux de trésor tout en évitant l\'apparition de fantômes, prouvant que l\'imagination est le meilleur outil d\'horreur.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/7/7a/Hauntedhouse_atari.jpg" 
@@ -338,7 +395,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Sweet Home (1989)', 'Précurseur direct de Resident Evil. Il a introduit des concepts fondamentaux comme les énigmes environnementales, la gestion limitée de l\'inventaire, les portes verrouillées, les écrans de chargement simulant l\'ouverture de portes, et le concept de mort permanente des membres du groupe. Il est le véritable père du Survival Horror.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="http://www.honestgamers.com/images/assets/12/S/14577/1.jpg" 
@@ -351,7 +408,7 @@
                         </div>
                     </li>
                     <!-- II. L'Apogée du Survival -->
-                    <li>
+                    <li onclick="showRecap('Resident Evil (1996)', 'Le jeu qui a popularisé et défini le genre *Survival Horror*. Il est célèbre pour ses caméras fixes, ses contrôles rigides (tank controls) qui amplifient la vulnérabilité, ses jump scares et sa gestion d\'inventaire limitée, tous conçus pour maintenir une tension constante.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://www.residentevil.com/1/_asset/images/bio1-share-global.png" 
@@ -363,7 +420,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Silent Hill (1999)', 'L\'alternative psychologique à Resident Evil. Il s\'appuie sur une ambiance lourde, un brouillard permanent, des sons distordus et un design de monstre symbolique pour créer un sentiment de malaise et d\'horreur psychologique profonde, explorant des thèmes de culpabilité et de réalité déformée.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/9/96/Silent_Hill_video_game_cover.png" 
@@ -376,7 +433,7 @@
                         </div>
                     </li>
                     <!-- III. Le Virage Action-Horror -->
-                    <li>
+                    <li onclick="showRecap('Resident Evil 4 (2005)', 'Ce titre a fait pivoter le genre vers l\'action avec la vue à l\'épaule, des vagues d\'ennemis et un accent mis sur le combat plutôt que la peur. Bien qu\'il ait été critiqué pour s\'être éloigné du survival pur, il a créé le modèle de l\'*Action Horror* moderne.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvEMK735vGhM8fzNOJg0Q-iTcNtm-lLf2FNQ&s" 
@@ -388,7 +445,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Dead Space (2008)', 'Un chef-d\'œuvre de l\'horreur de science-fiction. Il perfectionne la formule Action-Horror en introduisant le "démembrement stratégique" comme mécanique de combat principale. Son HUD intégré au costume (Diégétique) renforce l\'immersion et l\'isolement.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://cdn1.epicgames.com/offer/4ec958d5e4b6429aadbc116cee0b6ea0/EGS_DeadSpace_MotiveStudio_S2_1200x1600-551c16d068cab45b02149e15a43c2413" 
@@ -400,7 +457,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Alan Wake (2010)', 'Un jeu d\'Action-Horror fortement axé sur la narration. La mécanique principale implique d\'utiliser la lumière pour affaiblir les ennemis avant de les abattre. Son scénario, inspiré des séries télévisées, mélange horreur psychologique et action trépidante.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/1/1f/Alan_Wake_Game_Cover.jpg" 
@@ -412,7 +469,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Dying Light (2015)', 'Combine l\'horreur de survie zombie avec des mécaniques de monde ouvert et de parkour. L\'horreur change dynamiquement entre la lutte intense le jour (action) et la fuite désespérée la nuit (survival), redéfinissant l\'horreur d\'action post-apocalyptique.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/c/c0/Dying_Light_cover.jpg" 
@@ -425,7 +482,7 @@
                         </div>
                     </li>
                     <!-- IV. Le Retour à la Vulnérabilité -->
-                    <li>
+                    <li onclick="showRecap('Amnesia: The Dark Descent (2010)', 'Jeu qui a initié l\'ère de l\'horreur de la première personne sans combat. Le joueur ne peut que fuir ou se cacher, et doit gérer non seulement sa santé physique, mais aussi sa santé mentale (Sanity) pour ne pas sombrer dans la folie, créant une vulnérabilité extrême.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Amnesia-The-Dark-Descent-Cover-Art.png/250px-Amnesia-The-Dark-Descent-Cover-Art.png" 
@@ -437,7 +494,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Outlast (2013)', 'A popularisé la formule "Fuir et se cacher" auprès du grand public. Le joueur, armé uniquement d\'une caméra vidéo avec vision nocturne, est totalement impuissant face aux menaces, créant un sentiment d\'urgence et de claustrophobie intense.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Outlast_cover.jpg/250px-Outlast_cover.jpg" 
@@ -449,7 +506,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Alien: Isolation (2014)', 'Un exemple AAA de l\'horreur d\'impuissance. Le joueur est traqué par un unique Xénomorphe dont le comportement est imprévisible, forçant l\'infiltration et la fuite constantes, et revenant à l\'essence de la peur de la traque sans défense.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Alien_Isolation.jpg/250px-Alien_Isolation.jpg" 
@@ -461,7 +518,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Five Nights at Freddy\'s (FNAF) (2014)', 'A créé le sous-genre de l\'horreur de surveillance. Le joueur est limité à un poste de sécurité et doit gérer des ressources électriques limitées pour repousser des menaces imprévisibles (animatroniques). Il se concentre sur l\'anticipation et les jump scares.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Five_Nights_at_Freddy%27s.svg/330px-Five_Nights_at_Freddy%27s.svg.png" 
@@ -474,7 +531,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="example-item-content">
+                        <div class="example-item-content" onclick="showRecap('Granny (2017)', 'Un exemple influent de l\'horreur de fuite asymétrique. Le joueur doit échapper à la maison de la Grand-Mère titulaire en résolvant des énigmes en 5 jours, avec une seule entité de poursuite. Il met l\'accent sur la furtivité et la punition immédiate.')">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Granny_Game_Logo.png/250px-Granny_Game_Logo.png" 
                                  alt="Couverture de Granny (2017)"
@@ -485,7 +542,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Fear & Hunger (2018)', 'Un RPG d\'horreur indépendant notoirement difficile et cruel, inspiré par l\'horreur body horror et la mythologie sombre. Il se concentre sur la gestion de la faim, de la folie et des membres, transformant la survie elle-même en une expérience horrifiante.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Fear_%26_Hunger.jpg/250px-Fear_%26_Hunger.jpg" 
@@ -497,7 +554,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li onclick="showRecap('Fear & Hunger 2: Termina (2022)', 'Suite qui augmente l\'échelle et la complexité du premier jeu, se déroulant dans un festival de la mort de type Battle Royale Lovecraftien. Il maintient la difficulté punitive et se concentre davantage sur les choix moraux et le développement des personnages dans un environnement hostile.')">
                         <div class="example-item-content">
                             <img class="example-img" 
                                  src="https://upload.wikimedia.org/wikipedia/en/b/b1/Fear_%26_Hunger_2%2C_Termina.jpg" 
@@ -515,12 +572,43 @@
         </div>
     </main>
 
+    <!-- Modale de Récapitulatif (Invisible par défaut) -->
+    <div id="recapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeRecapModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalRecap"></p>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Analyse de l'évolution du jeu vidéo d'horreur (Excluant les jeux mobiles)</p>
         </div>
     </footer>
+
+    <script>
+        // Fonction pour afficher la modale avec le contenu spécifique
+        function showRecap(title, recap) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalRecap').innerText = recap;
+            document.getElementById('recapModal').style.display = 'block';
+        }
+
+        // Fonction pour fermer la modale
+        function closeRecapModal() {
+            document.getElementById('recapModal').style.display = 'none';
+        }
+
+        // Fermer la modale si l'utilisateur clique en dehors de la boîte de contenu
+        window.onclick = function(event) {
+            const modal = document.getElementById('recapModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
