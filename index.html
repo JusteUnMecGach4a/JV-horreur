@@ -14,13 +14,13 @@
 
         /* Variables pour le Thème Gothique */
         :root {
-            --color-dark: #0f0f0f; /* Presque noir */
-            --color-accent: #ff0000; /* Rouge vif pour l'accentuation */
-            --color-text: #e0e0e0; /* Gris clair */
-            --color-subtle: #888; /* Gris pour le texte secondaire */
-            --color-box: #1a1a1a; /* Gris très sombre pour les cartes */
-            --color-box-border: #330000; /* Bordure sombre pour les sections */
-            --color-modal-bg: rgba(0, 0, 0, 0.9); /* Fond de modale très sombre */
+            --color-dark: #080808; /* Encore plus sombre */
+            --color-accent: #ff2222; /* Rouge légèrement plus doux */
+            --color-text: #f0f0f0; /* Blanc cassé */
+            --color-subtle: #a0a0a0; /* Gris pour le texte secondaire */
+            --color-box: #121212; /* Gris très sombre pour les cartes */
+            --color-box-border: #500000; /* Bordure sombre pour les sections */
+            --color-modal-bg: rgba(0, 0, 0, 0.95); /* Fond de modale très sombre */
         }
 
         body {
@@ -30,12 +30,13 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            line-height: 1.7; /* Amélioration de la lisibilité */
+            line-height: 1.7; 
+            scroll-behavior: smooth; /* Défilement fluide pour la navigation */
         }
 
         /* Conteneur principal pour centrer le contenu */
         .container {
-            max-width: 960px;
+            max-width: 1000px; /* Légèrement plus large */
             margin-left: auto;
             margin-right: auto;
             padding-left: 1rem;
@@ -43,89 +44,96 @@
             text-align: center;
         }
 
-        /* Header Styling - Ambiance sombre */
+        /* Header Styling */
         .header {
-            background: rgba(40, 0, 0, 0.5); /* Semi-transparent rouge/noir */
-            padding: 2.5rem 0 1rem; /* Réduction du padding bottom pour la nav */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-            border-bottom: 3px solid var(--color-accent);
+            background: linear-gradient(180deg, rgba(20, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+            padding: 2.5rem 0 1rem; 
+            box-shadow: 0 4px 15px rgba(255, 34, 34, 0.15); /* Ombre accentuée */
+            border-bottom: 2px solid var(--color-accent);
         }
 
         .main-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 2.5rem; /* Base pour mobile */
+            font-size: 3rem;
             font-weight: 900;
             color: var(--color-accent);
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 8px rgba(255, 0, 0, 0.7); /* Effet lumineux inquiétant */
+            text-shadow: 0 0 10px rgba(255, 34, 34, 0.9); /* Lueur rouge plus intense */
         }
 
         @media (min-width: 640px) {
             .main-title {
-                font-size: 3.5rem;
+                font-size: 4rem;
             }
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--color-subtle);
-            margin-bottom: 1.5rem; /* Espace avant la nav */
+            margin-bottom: 1.5rem;
         }
 
         /* NAVIGATION STYLING */
+        .nav {
+            padding: 0.5rem 0;
+            background-color: #101010;
+            position: sticky; /* Rendre la nav flottante */
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
         .nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            flex-wrap: wrap; /* Gère le débordement sur mobile */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            border-top: 1px solid var(--color-box-border);
-            padding-top: 1rem;
+            gap: 1rem;
         }
 
         .nav a {
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--color-text);
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             border: 1px solid var(--color-box-border);
-            border-radius: 5px;
-            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-            background-color: #200000; /* Fond rouge sombre */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            white-space: nowrap; /* Empêche les liens de se casser sur plusieurs lignes */
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            background-color: #1a0000;
+            box-shadow: inset 0 0 5px rgba(255, 34, 34, 0.2);
         }
 
         .nav a:hover {
             background-color: var(--color-accent);
             color: var(--color-dark);
             border-color: var(--color-accent);
-            text-shadow: none;
+            transform: scale(1.05);
         }
         
         /* Main Content */
         main {
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .intro-section {
-            margin-bottom: 3rem;
-            padding: 1.5rem;
+            margin-bottom: 4rem;
+            padding: 2rem;
             background-color: var(--color-box);
-            border-radius: 0.75rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
-            border-left: 5px solid var(--color-accent); /* Changement de couleur pour plus d'impact */
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--color-box-border);
+            border-left: 6px solid var(--color-accent); /* Ligne plus épaisse */
+            text-align: left;
         }
         
         .era-container {
             display: grid;
-            gap: 3rem;
+            gap: 4rem; /* Plus d'espace entre les boîtes */
         }
 
         /* Optimisation de la grille pour les grands écrans */
@@ -135,132 +143,123 @@
             }
         }
 
-        /* Section Title Styling - Bordure de "sang" */
+        /* Section Title Styling */
         .era-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--color-accent);
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--color-accent); 
-            text-shadow: 1px 1px 2px #000;
-            text-align: left;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 5px rgba(255, 34, 34, 0.5);
+            text-align: center;
+            /* Ligne décorative sous le titre */
+            border-bottom: 1px dashed var(--color-subtle); 
+            padding-bottom: 0.5rem;
         }
 
         @media (min-width: 640px) {
              .era-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
         }
         
-        /* Liste des exemples pour la nouvelle section */
+        /* Boîte de contenu pour chaque ère */
+        .content-box {
+            padding: 2rem;
+            background-color: var(--color-box);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--color-box-border);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+            min-height: 350px; /* Pour aligner les boîtes sur le même niveau */
+        }
+
+        .content-box:hover {
+            transform: translateY(-8px); /* Effet de survol plus marqué */
+            box-shadow: 0 15px 30px rgba(255, 34, 34, 0.4);
+        }
+
+        .content-box p {
+            color: var(--color-text);
+            margin-bottom: 1.4rem; 
+        }
+
+        /* EXEMPLES CLÉS STYLING (Nouvelle mise en page) */
+        #exemples {
+            border-left: none; /* Pas de ligne rouge pour cette section centrale */
+            border: 2px solid var(--color-box-border);
+            padding: 3rem;
+        }
+        
         .example-list {
             list-style: none;
             padding: 0;
             margin: 0;
             display: grid;
-            gap: 1.5rem; /* Augmentation de l'espace entre les jeux */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive Grid pour les exemples */
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         /* STYLE POUR CHAQUE ÉLÉMENT DE LISTE */
         .example-list li {
             border: 1px solid var(--color-box-border);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            background-color: #151515;
-            transition: border-color 0.2s;
-            cursor: pointer; /* Indique l'interactivité */
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: #181818;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+            text-align: left;
+            height: 100%; /* S'assurer qu'ils remplissent la grille */
         }
         
         .example-list li:hover {
-            border-color: rgba(255, 0, 0, 0.5);
-        }
-
-        .example-list strong {
-            color: var(--color-accent);
-            font-weight: 700;
+            transform: scale(1.02);
+            background-color: #250000;
+            border-color: var(--color-accent);
         }
         
         /* Styles pour les images et l'alignement dans la liste */
         .example-item-content {
-            display: grid;
-            grid-template-columns: 120px 1fr; /* Colonne fixe plus large pour l'image */
+            display: flex;
             align-items: center; 
             gap: 1.5rem;
-            text-align: left;
+        }
+        
+        .example-details {
+            display: flex;
+            flex-direction: column;
         }
 
         .example-item-content .era-label {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.1rem;
-            color: var(--color-subtle);
+            font-size: 0.9rem;
+            color: var(--color-accent);
             margin-bottom: 0.25rem;
             display: block;
+            text-transform: uppercase;
         }
 
         .example-item-content .game-name {
             font-family: 'Inter', sans-serif;
-            font-size: 1.3rem; /* Nom du jeu plus grand */
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 700;
             color: var(--color-text);
             margin: 0;
-            line-height: 1.3;
+            line-height: 1.2;
         }
 
         .example-img {
-            width: 120px; /* Image plus grande */
-            height: 75px; /* Image plus grande */
+            min-width: 120px; 
+            height: 75px; 
             border-radius: 4px;
             object-fit: cover;
             border: 2px solid var(--color-box-border);
-            box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
-        }
-        
-        /* Boîte de contenu pour chaque ère */
-        .content-box {
-            padding: 1.5rem;
-            background-color: var(--color-box);
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-align: left;
-            border: 2px solid var(--color-box-border); /* Bordure définie */
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
         }
 
-        .content-box:hover {
-            transform: translateY(-5px); /* Plus grand effet de survol */
-            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3); /* Ombre rouge plus prononcée */
-        }
-
-        .content-box p {
-            color: var(--color-text);
-            margin-bottom: 1.2rem; /* Espacement accru entre les paragraphes */
-        }
-
-        .content-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 3rem;
-            padding: 1.5rem 0;
-            background-color: #0d0d0d;
-            border-top: 1px dashed var(--color-accent);
-        }
-
-        .footer p {
-            color: var(--color-subtle);
-            font-size: 0.875rem;
-        }
-        
-        /* Réinitialisation pour les éléments HTML (pour la compatibilité) */
-        h1, h2, p, section, header, footer, main, div, ul, li {
-            box-sizing: border-box;
-        }
-
-        /* MODALE STYLING */
+        /* MODALE STYLING (inchangé pour la fonctionnalité) */
         .modal {
             display: none; 
             position: fixed; 
@@ -282,7 +281,7 @@
             width: 80%;
             max-width: 600px;
             border-radius: 10px;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(255, 34, 34, 0.5);
             text-align: left;
         }
 
@@ -314,6 +313,14 @@
             text-decoration: none;
             cursor: pointer;
         }
+        
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            padding: 1.5rem 0;
+            background-color: #0d0d0d;
+            border-top: 1px dashed var(--color-accent);
+        }
     </style>
 </head>
 <body class="text-gray-100 min-h-screen">
@@ -325,19 +332,21 @@
                 L'Évolution du Jeu Vidéo d'Horreur
             </h1>
             <p class="subtitle">Des pixels terrifiants aux cauchemars psychologiques modernes</p>
-            
-            <!-- Nouvelle barre de navigation -->
-            <nav class="nav">
-                <ul>
-                    <li><a href="#era-i">I. Pixels & Texte</a></li>
-                    <li><a href="#era-ii">II. Survival Horror</a></li>
-                    <li><a href="#era-iii">III. Action-Horror</a></li>
-                    <li><a href="#era-iv">IV. Vulnérabilité</a></li>
-                    <li><a href="#exemples">Exemples Clés</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
+    
+    <!-- Nouvelle barre de navigation (maintenant sticky) -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#era-i">I. Pixels & Texte</a></li>
+                <li><a href="#era-ii">II. Survival Horror</a></li>
+                <li><a href="#era-iii">III. Action-Horror</a></li>
+                <li><a href="#era-iv">IV. Vulnérabilité</a></li>
+                <li><a href="#exemples">Exemples Clés</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Contenu Principal -->
     <main>
@@ -441,7 +450,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/7/7a/Hauntedhouse_atari.jpg" 
                                  alt="Capture d'écran de Haunted House (Atari)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Atari';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">I. L'Ère des Pixels</span>
                                 <p class="game-name"><strong>Haunted House</strong> (1982)</p>
                             </div>
@@ -453,7 +462,7 @@
                                  src="http://www.honestgamers.com/images/assets/12/S/14577/1.jpg" 
                                  alt="Capture d'écran de Sweet Home (1989)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=NES';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">I. L'Ère des Pixels</span>
                                 <p class="game-name"><strong>Sweet Home</strong> (1989)</p>
                             </div>
@@ -466,7 +475,7 @@
                                  src="https://www.residentevil.com/1/_asset/images/bio1-share-global.png" 
                                  alt="Couverture du jeu Resident Evil (1996)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=PS1';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">II. L'Apogée du Survival</span>
                                 <p class="game-name"><strong>Resident Evil</strong> (1996)</p>
                             </div>
@@ -478,7 +487,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/9/96/Silent_Hill_video_game_cover.png" 
                                  alt="Couverture de Silent Hill (1999)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Brouillard';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">II. L'Apogée du Survival</span>
                                 <p class="game-name"><strong>Silent Hill</strong> (1999)</p>
                             </div>
@@ -491,7 +500,7 @@
                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvEMK735vGhM8fzNOJg0Q-iTcNtm-lLf2FNQ&s" 
                                  alt="Couverture de Resident Evil 4 (2005)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Action';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">III. Le Virage Action-Horror</span>
                                 <p class="game-name"><strong>Resident Evil 4</strong> (2005)</p>
                             </div>
@@ -503,7 +512,7 @@
                                  src="https://cdn1.epicgames.com/offer/4ec958d5e4b6429aadbc116cee0b6ea0/EGS_DeadSpace_MotiveStudio_S2_1200x1600-551c16d068cab45b02149e15a43c2413" 
                                  alt="Couverture de Dead Space (2008)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Sci-Fi';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">III. Le Virage Action-Horror</span>
                                 <p class="game-name"><strong>Dead Space</strong> (2008)</p>
                             </div>
@@ -515,7 +524,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/1/1f/Alan_Wake_Game_Cover.jpg" 
                                  alt="Couverture de Alan Wake (2010)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Lumière';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">III. Le Virage Action-Horror</span>
                                 <p class="game-name"><strong>Alan Wake</strong> (2010)</p>
                             </div>
@@ -527,7 +536,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/c/c0/Dying_Light_cover.jpg" 
                                  alt="Couverture de Dying Light (2015)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Parkour';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">III. Le Virage Action-Horror</span>
                                 <p class="game-name"><strong>Dying Light</strong> (2015)</p>
                             </div>
@@ -540,7 +549,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Amnesia-The-Dark-Descent-Cover-Art.png/250px-Amnesia-The-Dark-Descent-Cover-Art.png" 
                                  alt="Couverture d'Amnesia: The Dark Descent (2010)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Impuissance';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
                                 <p class="game-name"><strong>Amnesia: The Dark Descent</strong> (2010)</p>
                             </div>
@@ -552,7 +561,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Outlast_cover.jpg/250px-Outlast_cover.jpg" 
                                  alt="Couverture d'Outlast (2013)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Caméra';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
                                 <p class="game-name"><strong>Outlast</strong> (2013)</p>
                             </div>
@@ -564,7 +573,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Alien_Isolation.jpg/250px-Alien_Isolation.jpg" 
                                  alt="Couverture de Alien: Isolation (2014)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Alien';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
                                 <p class="game-name"><strong>Alien: Isolation</strong> (2014)</p>
                             </div>
@@ -576,7 +585,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Five_Nights_at_Freddy%27s.svg/330px-Five_Nights_at_Freddy%27s.svg.png" 
                                  alt="Couverture de Five Nights at Freddy's (2014)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=FNAF';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
                                 <p class="game-name"><strong>FNAF</strong> (2014)</p>
                             </div>
@@ -588,7 +597,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Granny_Game_Logo.png/250px-Granny_Game_Logo.png" 
                                  alt="Couverture de Granny (2017)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Granny';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
                                 <p class="game-name"><strong>Granny</strong> (2017)</p>
                             </div>
@@ -600,7 +609,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Fear_%26_Hunger.jpg/250px-Fear_%26_Hunger.jpg" 
                                  alt="Couverture de Fear & Hunger (2018)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=RPG';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
                                 <p class="game-name"><strong>Fear & Hunger</strong> (2018)</p>
                             </div>
@@ -612,7 +621,7 @@
                                  src="https://upload.wikimedia.org/wikipedia/en/b/b1/Fear_%26_Hunger_2%2C_Termina.jpg" 
                                  alt="Couverture de Fear & Hunger 2: Termina (2022)"
                                  onerror="this.onerror=null;this.src='https://placehold.co/120x75/330000/ff0000?text=Termina';">
-                            <div>
+                            <div class="example-details">
                                 <span class="era-label">IV. Le Retour à la Vulnérabilité</span>
                                 <p class="game-name"><strong>Fear & Hunger 2: Termina</strong> (2022)</p>
                             </div>
