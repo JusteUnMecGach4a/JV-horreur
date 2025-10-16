@@ -46,7 +46,7 @@
         /* Header Styling - Ambiance sombre */
         .header {
             background: rgba(40, 0, 0, 0.5); /* Semi-transparent rouge/noir */
-            padding: 2.5rem 0;
+            padding: 2.5rem 0 1rem; /* Réduction du padding bottom pour la nav */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
             border-bottom: 3px solid var(--color-accent);
         }
@@ -70,8 +70,45 @@
         .subtitle {
             font-size: 1.25rem;
             color: var(--color-subtle);
+            margin-bottom: 1.5rem; /* Espace avant la nav */
         }
 
+        /* NAVIGATION STYLING */
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Gère le débordement sur mobile */
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            border-top: 1px solid var(--color-box-border);
+            padding-top: 1rem;
+        }
+
+        .nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-box-border);
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            background-color: #200000; /* Fond rouge sombre */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            white-space: nowrap; /* Empêche les liens de se casser sur plusieurs lignes */
+        }
+
+        .nav a:hover {
+            background-color: var(--color-accent);
+            color: var(--color-dark);
+            border-color: var(--color-accent);
+            text-shadow: none;
+        }
+        
         /* Main Content */
         main {
             padding: 2rem 1rem;
@@ -288,6 +325,17 @@
                 L'Évolution du Jeu Vidéo d'Horreur
             </h1>
             <p class="subtitle">Des pixels terrifiants aux cauchemars psychologiques modernes</p>
+            
+            <!-- Nouvelle barre de navigation -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#era-i">I. Pixels & Texte</a></li>
+                    <li><a href="#era-ii">II. Survival Horror</a></li>
+                    <li><a href="#era-iii">III. Action-Horror</a></li>
+                    <li><a href="#era-iv">IV. Vulnérabilité</a></li>
+                    <li><a href="#exemples">Exemples Clés</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -304,7 +352,8 @@
 
             <!-- Conteneur des ères -->
             <div class="era-container">
-                <section>
+                <!-- I. L'Ère des Pixels et du Texte -->
+                <section id="era-i">
                     <h2 class="era-title">
                         I. L'Ère des Pixels et du Texte (1980s - Début 1990s)
                     </h2>
@@ -319,7 +368,7 @@
                 </section>
 
                 <!-- II. L'Âge d'Or du Survival Horror (Milieu 1990s - Début 2000s) -->
-                <section>
+                <section id="era-ii">
                     <h2 class="era-title">
                         II. L'Apogée du Survival Horror (Milieu 1990s - Début 2000s)
                     </h2>
@@ -334,7 +383,7 @@
                 </section>
 
                 <!-- III. Le Virage Action et le Cinématisme (Milieu 2000s - Début 2010s) -->
-                <section>
+                <section id="era-iii">
                     <h2 class="era-title">
                         III. Le Virage Action-Horror (Milieu 2000s - Début 2010s)
                     </h2>
@@ -355,7 +404,7 @@
                 </section>
 
                 <!-- IV. Le Renouveau de l'Horreur Psychologique et Indépendante (Début 2010s - Aujourd'hui) -->
-                <section>
+                <section id="era-iv">
                     <h2 class="era-title">
                         IV. Le Retour à la Vulnérabilité (Début 2010s - Aujourd'hui)
                     </h2>
@@ -380,7 +429,7 @@
             </div>
             
             <!-- Nouvelle Section : Exemples Clés avec Images (Mise en page refaite) -->
-            <section class="intro-section" style="margin-top: 5rem;">
+            <section id="exemples" class="intro-section" style="margin-top: 5rem;">
                 <h2 class="era-title" style="border-left: 0; text-align: center; padding-left: 0;">
                     Exemples Clés par Période
                 </h2>
