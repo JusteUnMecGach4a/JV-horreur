@@ -173,6 +173,16 @@
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: left;
             min-height: 350px; /* Pour aligner les boîtes sur le même niveau */
+            display: block; /* S'assurer que le lien remplisse bien le bloc */
+            color: inherit; /* Hériter de la couleur du texte */
+            text-decoration: none; /* Supprimer la soulignement du lien */
+        }
+
+        /* Nouvelle classe pour le conteneur de lien */
+        .era-link-container {
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
 
         .content-box:hover {
@@ -339,7 +349,7 @@
     <nav class="nav">
         <div class="container">
             <ul>
-                <li><a href="#era-i">I. Pixels & Texte</a></li>
+                <li><a href="#pixel-et-texte">I. Pixels & Texte</a></li>
                 <li><a href="#era-ii">II. Survival Horror</a></li>
                 <li><a href="#era-iii">III. Action-Horror</a></li>
                 <li><a href="#era-iv">IV. Vulnérabilité</a></li>
@@ -355,25 +365,27 @@
             <!-- Introduction -->
             <section class="intro-section">
                 <p>
-                    Le jeu vidéo d'horreur a toujours puisé dans nos peurs les plus profondes, évoluant drastiquement avec les avancées technologiques. Ce parcours nous mène des simples textes et graphismes rudimentaires des débuts à l'immersion totale des expériences contemporaines. Explorons les quatre grandes ères qui ont défini ce genre terrifiant.
+                    Le jeu vidéo d'horreur a toujours puisé dans nos peurs les plus profondes, évoluant drastiquement avec les avancées technologiques. Ce parcours nous mène des simples textes et graphismes rudimentaires des débuts à l'immersion totale des expériences contemporaines. Pour commencer, explorons l'époque fondatrice du genre : <a href="pixel-et-texte.html">l'Ère des Pixels et du Texte</a>.
                 </p>
             </section>
 
             <!-- Conteneur des ères -->
             <div class="era-container">
-                <!-- I. L'Ère des Pixels et du Texte -->
-                <section id="era-i">
-                    <h2 class="era-title">
-                        I. L'Ère des Pixels et du Texte (1980s - Début 1990s)
-                    </h2>
-                    <div class="content-box">
-                        <p>
-                            Avant même la création d'un genre défini, l'horreur s'exprimait par l'imagination. Les jeux d'aventure textuelle comme <strong>Zork</strong> (bien que n'étant pas purement horrifique) créaient l'angoisse par la description. L'un des premiers titres à thème clair fut <strong>Haunted House</strong> (1982 sur Atari 2600), où quelques pixels tremblants suffisaient à suggérer le danger dans l'obscurité.
-                        </p>
-                        <p>
-                            Cependant, le véritable précurseur des mécaniques d'horreur moderne est souvent considéré comme <strong>Sweet Home</strong> (1989, NES, Japon uniquement). Ce jeu a introduit la gestion d'inventaire limitée, les portes verrouillées, les énigmes et même la nécessité de gérer la mort permanente des personnages, des éléments qui deviendront la pierre angulaire du Survival Horror.
-                        </p>
-                    </div>
+                <!-- I. L'Ère des Pixels et du Texte (Contenu cliquable) -->
+                <section>
+                    <a href="pixel-et-texte.html" class="era-link-container">
+                        <h2 class="era-title">
+                            I. L'Ère des Pixels et du Texte (1980s - Début 1990s)
+                        </h2>
+                        <div class="content-box">
+                            <p>
+                                Avant même la création d'un genre défini, l'horreur s'exprimait par l'imagination. Les jeux d'aventure textuelle comme <strong>Zork</strong> (bien que n'étant pas purement horrifique) créaient l'angoisse par la description. L'un des premiers titres à thème clair fut <strong>Haunted House</strong> (1982 sur Atari 2600), où quelques pixels tremblants suffisaient à suggérer le danger dans l'obscurité.
+                            </p>
+                            <p>
+                                Cependant, le véritable précurseur des mécaniques d'horreur moderne est souvent considéré comme <strong>Sweet Home</strong> (1989, NES, Japon uniquement). Ce jeu a introduit la gestion d'inventaire limitée, les portes verrouillées, les énigmes et même la nécessité de gérer la mort permanente des personnages, des éléments qui deviendront la pierre angulaire du Survival Horror.
+                            </p>
+                        </div>
+                    </a>
                 </section>
 
                 <!-- II. L'Âge d'Or du Survival Horror (Milieu 1990s - Début 2000s) -->
