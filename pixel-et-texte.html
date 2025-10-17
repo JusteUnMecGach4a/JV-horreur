@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I. L'Ère des Pixels et du Texte</title>
+    
+    <!-- Ajout de l'icône (Favicon) : Emoji de la chauve-souris 🦇 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦇</text></svg>">
+    
+    <style>
+        /* Importation des polices thématiques */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@100..900&display=swap');
 
+        /* Variables pour le Thème Gothique (Identiques au document principal) */
+        :root {
+            --color-dark: #080808; 
+            --color-accent: #ff2222; 
+            --color-text: #f0f0f0; 
+            --color-subtle: #a0a0a0; 
+            --color-box: #121212; 
+            --color-box-border: #500000; 
+            --color-modal-bg: rgba(0, 0, 0, 0.95);
+            --color-header-bg: #101010; /* Fond pour cette page dédiée */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-text);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7; 
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 800px; 
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .header {
+            background-color: var(--color-header-bg);
+            padding: 2.5rem 0 1.5rem; 
+            box-shadow: 0 4px 15px rgba(255, 34, 34, 0.15); 
+            border-bottom: 3px solid var(--color-accent);
+        }
+
+        .main-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.5rem; 
+            font-weight: 900;
+            color: var(--color-accent);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 34, 34, 0.9);
+        }
+        
+        .main-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-subtle);
+            margin-top: 0;
+        }
+
+        .content-box {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: var(--color-box);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--color-box-border);
+            text-align: left;
+        }
+
+        .content-box p {
+            color: var(--color-text);
+            margin-bottom: 1.4rem; 
+        }
+
+        .content-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.7rem;
+            color: var(--color-accent);
+            border-bottom: 1px dashed var(--color-subtle); 
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 10px 20px;
+            background-color: var(--color-accent);
+            color: var(--color-dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #ff5555;
+        }
+
+        /* EXEMPLES STYLING */
+        .example-section {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--color-box-border);
+        }
+
+        .example-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .example-list li {
+            border: 1px solid var(--color-box-border);
+            border-radius: 8px;
+            padding: 1rem;
+            background-color: #181818;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .example-img {
+            min-width: 100px; 
+            height: 60px; 
+            border-radius: 4px;
+            object-fit: cover;
+            border: 2px solid var(--color-box-border);
+        }
+        
+        .example-details strong {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">
+                I. L'Ère des Pixels et du Texte
+            </h1>
+            <p class="main-subtitle">Les fondations minimalistes de l'horreur vidéo ludique</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-box">
+            <h2 class="content-title">Analyse</h2>
+            <p>
+                Avant même la création d'un genre défini, l'horreur s'exprimait par l'imagination. Les jeux d'aventure textuelle comme <strong>Zork</strong> (bien que n'étant pas purement horrifique) créaient l'angoisse par la description. L'un des premiers titres à thème clair fut <strong>Haunted House</strong> (1982 sur Atari 2600), où quelques pixels tremblants suffisaient à suggérer le danger dans l'obscurité.
+            </p>
+            <p>
+                Cependant, le véritable précurseur des mécaniques d'horreur moderne est souvent considéré comme <strong>Sweet Home</strong> (1989, NES, Japon uniquement). Ce jeu a introduit la gestion d'inventaire limitée, les portes verrouillées, les énigmes et même la nécessité de gérer la mort permanente des personnages, des éléments qui deviendront la pierre angulaire du Survival Horror.
+            </p>
+        </div>
+
+        <section class="example-section">
+            <h2 class="content-title">Exemples Clés</h2>
+            <ul class="example-list">
+                <li>
+                    <img class="example-img" 
+                         src="https://upload.wikimedia.org/wikipedia/en/7/7a/Hauntedhouse_atari.jpg" 
+                         alt="Capture d'écran de Haunted House (Atari)">
+                    <div class="example-details">
+                        <strong>Haunted House</strong> (1982)
+                        <p>Horreur minimaliste sur Atari, utilisant l'obscurité et le mouvement de quelques pixels pour stimuler l'imagination du joueur.</p>
+                    </div>
+                </li>
+                <li>
+                    <img class="example-img" 
+                         src="http://www.honestgamers.com/images/assets/12/S/14577/1.jpg" 
+                         alt="Capture d'écran de Sweet Home (1989)">
+                    <div class="example-details">
+                        <strong>Sweet Home</strong> (1989)
+                        <p>Le véritable précurseur du *Survival Horror* moderne, introduisant des mécanismes comme les énigmes, la gestion d'inventaire limitée et les concepts de mort permanente.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <a href="index.html" class="back-link">Retour à l'Évolution Complète</a>
+    </main>
+</body>
+</html>
