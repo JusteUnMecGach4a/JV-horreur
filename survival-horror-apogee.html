@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>III. Le Virage Action-Horror</title>
+    
+    <!-- Ajout de l'icône (Favicon) : Emoji de la chauve-souris 🦇 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦇</text></svg>">
+    
+    <style>
+        /* Importation des polices thématiques */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@100..900&display=swap');
+
+        /* Variables pour le Thème Gothique (Identiques au document principal) */
+        :root {
+            --color-dark: #080808; 
+            --color-accent: #ff2222; 
+            --color-text: #f0f0f0; 
+            --color-subtle: #a0a0a0; 
+            --color-box: #121212; 
+            --color-box-border: #500000; 
+            --color-modal-bg: rgba(0, 0, 0, 0.95);
+            --color-header-bg: #101010;
+            --color-personal: #00cccc; /* Bleu turquoise pour la subtilité */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-text);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7; 
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 800px; 
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        /* En-tête de page */
+        .header {
+            background-color: var(--color-header-bg);
+            padding: 2.5rem 0 1.5rem; 
+            box-shadow: 0 4px 15px rgba(255, 34, 34, 0.15); 
+            border-bottom: 3px solid var(--color-accent);
+        }
+
+        .main-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.5rem; 
+            font-weight: 900;
+            color: var(--color-accent);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 34, 34, 0.9);
+        }
+        
+        .main-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-subtle);
+            margin-top: 0;
+        }
+
+        /* Contenu principal et boîtes */
+        .content-box {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: var(--color-box);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--color-box-border);
+            text-align: left;
+        }
+
+        .content-box p {
+            color: var(--color-text);
+            margin-bottom: 1.4rem; 
+        }
+
+        .content-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.7rem;
+            color: var(--color-accent);
+            border-bottom: 1px dashed var(--color-subtle); 
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bouton de retour */
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 10px 20px;
+            background-color: var(--color-accent);
+            color: var(--color-dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #ff5555;
+        }
+
+        /* EXEMPLES STYLING */
+        .example-section {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--color-box-border);
+        }
+
+        .example-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .example-list li {
+            border: 1px solid var(--color-box-border);
+            border-left: 5px solid var(--color-personal); 
+            border-radius: 8px;
+            padding: 1rem;
+            background-color: #181818;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .example-img {
+            min-width: 100px; 
+            height: 60px; 
+            border-radius: 4px;
+            object-fit: cover;
+            border: 2px solid var(--color-box-border);
+        }
+        
+        .example-details strong {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">
+                III. Le Virage Action-Horror
+            </h1>
+            <p class="main-subtitle">Quand le "Survival" cède la place à l'Adrénaline (Milieu 2000s - Début 2010s)</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-box">
+            <h2 class="content-title">La recherche de Puissance et de Cinématisme</h2>
+            <p>
+                Avec l'amélioration des graphismes et l'évolution des commandes de manettes, les développeurs ont cherché à rendre les jeux d'horreur plus accessibles et plus dynamiques. Le changement majeur est survenu avec l'introduction de la vue à l'épaule, offrant un contrôle plus direct du personnage et facilitant les combats en temps réel.
+            </p>
+            <p>
+                Ce virage a transformé le genre en **Action-Horror**, où le joueur dispose de plus d'outils pour riposter, mais est confronté à des vagues d'ennemis plus nombreuses et plus agressives. L'accent n'était plus mis sur la peur de la pénurie, mais sur la peur de l'**écrasement numérique** face à un nombre insoutenable de menaces.
+            </p>
+
+            <h3 class="content-title" style="font-size: 1.5rem;">Resident Evil 4 (2005) : L'Acte de Naissance</h3>
+            <p>
+                Considéré comme un tournant, **Resident Evil 4** a abandonné les caméras fixes et les *tank controls* pour la célèbre vue à l'épaule (*Over-The-Shoulder*). Bien que le jeu ait conservé des éléments de gestion d'inventaire, il a basculé vers un gameplay axé sur l'action et la précision du tir. La tension résidait dans l'obligation de **s'arrêter pour tirer**, laissant le joueur vulnérable aux assauts des foules d'ennemis.
+            </p>
+            
+            <h3 class="content-title" style="font-size: 1.5rem;">Dead Space (2008) et le Défi Spatial</h3>
+            <p>
+                **Dead Space** a parfaitement incarné cette nouvelle ère, offrant une expérience gore et claustrophobe dans l'espace. Son innovation majeure fut le **démembrement stratégique**, forçant le joueur à viser les membres des Nécromorphes plutôt que la tête. De plus, son interface utilisateur (HUD) **diégétique** (intégré au costume du personnage) a renforcé l'immersion en ne sortant jamais le joueur de l'univers du jeu, un détail très cinématographique.
+            </p>
+            <p>
+                Le genre s'est ensuite diversifié en intégrant des systèmes de **monde ouvert et de mouvement**, comme dans **Dying Light** (2015). Dans ce jeu, l'horreur réside dans la double menace : les combats intenses le jour et la survie désespérée face aux monstres rapides et puissants la nuit, forçant le joueur à utiliser le parkour pour échapper au danger.
+            </p>
+        </div>
+
+        <section class="example-section">
+            <h2 class="content-title">Exemples Clés de l'Action-Horror</h2>
+            <ul class="example-list">
+                <li>
+                    <img class="example-img" 
+                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvEMK735vGhM8fzNOJg0Q-iTcNtm-lLf2FNQ&s" 
+                         alt="Couverture de Resident Evil 4 (2005)"
+                         onerror="this.onerror=null;this.src='https://placehold.co/100x60/330000/ff0000?text=Vue+Épaule';">
+                    <div class="example-details">
+                        <strong>Resident Evil 4</strong> (2005)
+                        <p>Définit l'Action-Horror : Introduction de la vue à l'épaule (*Over-The-Shoulder*) et accent mis sur le combat face aux foules d'ennemis.</p>
+                    </div>
+                </li>
+                <li>
+                    <img class="example-img" 
+                         src="https://cdn1.epicgames.com/offer/4ec958d5e4b6429aadbc116cee0b6ea0/EGS_DeadSpace_MotiveStudio_S2_1200x1600-551c16d068cab45b02149e15a43c2413" 
+                         alt="Couverture de Dead Space (2008)"
+                         onerror="this.onerror=null;this.src='https://placehold.co/100x60/330000/ff0000?text=Démembrement';">
+                    <div class="example-details">
+                        <strong>Dead Space</strong> (2008)
+                        <p>Sci-Fi Survival Horror : Innovation du démembrement stratégique et utilisation d'une interface utilisateur (HUD) totalement diégétique.</p>
+                    </div>
+                </li>
+                <li>
+                    <img class="example-img" 
+                         src="https://upload.wikimedia.org/wikipedia/en/c/c0/Dying_Light_cover.jpg" 
+                         alt="Couverture de Dying Light (2015)"
+                         onerror="this.onerror=null;this.src='https://placehold.co/100x60/330000/ff0000?text=Parkour';">
+                    <div class="example-details">
+                        <strong>Dying Light</strong> (2015)
+                        <p>Horreur d'Action en Monde Ouvert : Combine le combat intense le jour avec la fuite désespérée (Parkour) la nuit face à des menaces supérieures.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <a href="index.html" class="back-link">Retour à l'Évolution Complète</a>
+    </main>
+</body>
+</html>
