@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>II. L'Apogée du Survival Horror</title>
+    
+    <!-- Ajout de l'icône (Favicon) : Emoji de la chauve-souris 🦇 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦇</text></svg>">
+    
+    <style>
+        /* Importation des polices thématiques */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@100..900&display=swap');
+
+        /* Variables pour le Thème Gothique */
+        :root {
+            --color-dark: #080808; 
+            --color-accent: #ff2222; 
+            --color-text: #f0f0f0; 
+            --color-subtle: #a0a0a0; 
+            --color-box: #121212; 
+            --color-box-border: #500000; 
+            --color-modal-bg: rgba(0, 0, 0, 0.95);
+            --color-header-bg: #101010;
+            --color-personal: #00cccc; /* Bleu turquoise pour la subtilité */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-text);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7; 
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 800px; 
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        /* En-tête de page */
+        .header {
+            background-color: var(--color-header-bg);
+            padding: 2.5rem 0 1.5rem; 
+            box-shadow: 0 4px 15px rgba(255, 34, 34, 0.15); 
+            border-bottom: 3px solid var(--color-accent);
+        }
+
+        .main-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.5rem; 
+            font-weight: 900;
+            color: var(--color-accent);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 34, 34, 0.9);
+        }
+        
+        .main-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-subtle);
+            margin-top: 0;
+        }
+
+        /* Contenu principal et boîtes */
+        .content-box {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: var(--color-box);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--color-box-border);
+            text-align: left;
+        }
+
+        .content-box p {
+            color: var(--color-text);
+            margin-bottom: 1.4rem; 
+        }
+
+        .content-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.7rem;
+            color: var(--color-accent);
+            border-bottom: 1px dashed var(--color-subtle); 
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bouton de retour */
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 10px 20px;
+            background-color: var(--color-accent);
+            color: var(--color-dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #ff5555;
+        }
+
+        /* EXEMPLES STYLING */
+        .example-section {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--color-box-border);
+        }
+
+        .example-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .example-list li {
+            border: 1px solid var(--color-box-border);
+            border-left: 5px solid var(--color-personal); /* Bordure accentuée subtile */
+            border-radius: 8px;
+            padding: 1rem;
+            background-color: #181818;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .example-img {
+            min-width: 100px; 
+            height: 60px; 
+            border-radius: 4px;
+            object-fit: cover;
+            border: 2px solid var(--color-box-border);
+        }
+        
+        .example-details strong {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">
+                II. L'Apogée du Survival Horror
+            </h1>
+            <p class="main-subtitle">La naissance des mécaniques de pénurie et de la tension psychologique</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-box">
+            <h2 class="content-title">L'Ère du Survival, de la Pénurie et des Caméras Fixes (Milieu 1990s - Début 2000s)</h2>
+            <p>
+                L'avènement des consoles 32 bits, en particulier la PlayStation, a fourni la puissance nécessaire pour créer des environnements 3D pré-rendus. Ce bond technologique a permis de formaliser l'horreur vidéo ludique, la transformant d'une suggestion textuelle à une expérience visuelle et auditive angoissante. C'est l'ère où le genre a reçu son nom officiel : le **Survival Horror**.
+            </p>
+            <p>
+                Ce genre a été bâti sur trois piliers fondamentaux hérités de **Sweet Home** : la rareté des ressources, la complexité des énigmes, et un sentiment constant de **vulnérabilité**.
+            </p>
+
+            <h3 class="content-title" style="font-size: 1.5rem;">Resident Evil (1996) : Le Modèle Bâti sur la Peur de l'Étranglement</h3>
+            <p>
+                **Resident Evil** n'a pas inventé toutes les mécaniques, mais il les a assemblées de manière magistrale pour créer une formule instantanément reconnaissable. L'utilisation de **caméras fixes** permettait aux développeurs de masquer les dangers (les fameux *jump scares* derrière les angles de vue) et de contrôler précisément l'atmosphère de chaque pièce. 
+            </p>
+            <p>
+                Les célèbres *tank controls* (contrôles de char), où l'on tourne le personnage sur place avant d'avancer, étaient souvent une contrainte technique, mais elles servaient brillamment le gameplay d'horreur : elles amplifiaient le sentiment d'**impuissance** et rendaient la fuite paniquée plus difficile, transformant la traversée d'un simple couloir en un moment de tension extrême.
+            </p>
+            
+            <h3 class="content-title" style="font-size: 1.5rem;">Silent Hill (1999) : L'Horreur de l'Âme</h3>
+            <p>
+                Alors que Resident Evil se concentrait sur l'horreur biologique et viscérale, **Silent Hill** a exploré une voie plus **psychologique**. En utilisant les limitations matérielles de la PlayStation pour son propre avantage — notamment le **brouillard permanent** pour masquer la distance de rendu — il a créé une ville coupée du monde et désorientante.
+            </p>
+            <p>
+                Le jeu d'horreur de Konami s'appuyait sur l'**ambiance sonore** distordue et un *design* de monstre non aléatoire, mais symbolique (représentant les démons intérieurs des personnages), forçant le joueur à faire face à un malaise mental constant plutôt qu'à une attaque zombie frontale. Il a prouvé que l'horreur la plus durable venait du subconscient.
+            </p>
+        </div>
+
+        <section class="example-section">
+            <h2 class="content-title">Exemples Clés de l'Apogée</h2>
+            <ul class="example-list">
+                <li>
+                    <img class="example-img" 
+                         src="https://www.residentevil.com/1/_asset/images/bio1-share-global.png" 
+                         alt="Couverture du jeu Resident Evil (1996)"
+                         onerror="this.onerror=null;this.src='https://placehold.co/100x60/330000/ff0000?text=PS1';">
+                    <div class="example-details">
+                        <strong>Resident Evil</strong> (1996)
+                        <p>Définit le Survival Horror : Caméras fixes, munitions rares, gestion d'inventaire, et *tank controls* pour maximiser la vulnérabilité.</p>
+                    </div>
+                </li>
+                <li>
+                    <img class="example-img" 
+                         src="https://upload.wikimedia.org/wikipedia/en/9/96/Silent_Hill_video_game_cover.png" 
+                         alt="Couverture de Silent Hill (1999)"
+                         onerror="this.onerror=null;this.src='https://placehold.co/100x60/330000/ff0000?text=Brouillard';">
+                    <div class="example-details">
+                        <strong>Silent Hill</strong> (1999)
+                        <p>L'horreur psychologique et atmosphérique. Utilisation du brouillard pour la désorientation et de monstres symboliques pour le malaise.</p>
+                    </div>
+                </li>
+                <li>
+                    <img class="example-img" 
+                         src="https://upload.wikimedia.org/wikipedia/en/a/a2/Dino_Crisis_coverart.jpg" 
+                         alt="Couverture de Dino Crisis (1999)"
+                         onerror="this.onerror=null;this.src='https://placehold.co/100x60/330000/ff0000?text=Dino';">
+                    <div class="example-details">
+                        <strong>Dino Crisis</strong> (1999)
+                        <p>Application de la formule Survival Horror par l'équipe de Resident Evil, remplaçant les zombies par des dinosaures, axée sur l'action et la pression.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <a href="index.html" class="back-link">Retour à l'Évolution Complète</a>
+    </main>
+</body>
+</html>
