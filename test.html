@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Centrage</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables */
+        :root {
+            --color-dark: #080808;
+            --color-accent: #ff2222;
+            --color-text: #f0f0f0;
+        }
+
+        /* Base de la page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-text);
+            margin: 0; /* Important */
+            padding: 0; /* Important */
+        }
+
+        /* ====== LA RÈGLE DE CENTRAGE ====== */
+        .container {
+            max-width: 1000px;  /* Définit la largeur max */
+            margin-left: auto;   /* Centre le bloc (gauche) */
+            margin-right: auto;  /* Centre le bloc (droite) */
+            padding-left: 1rem;
+            padding-right: 1rem;
+            text-align: center; /* Centre le texte *à l'intérieur* du conteneur */
+        }
+
+        /* Header de test */
+        .header {
+            background: #111;
+            padding: 2.5rem 0 1rem; 
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        /* Titre de test */
+        .main-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 4rem;
+            color: var(--color-accent);
+            text-shadow: 0 0 10px rgba(255, 34, 34, 0.9);
+        }
+
+        /* Contenu de test */
+        .content-box {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: #121212;
+            border: 2px solid #500000;
+            border-radius: 10px;
+            text-align: left; /* Aligne le paragraphe à gauche, ce qui est normal */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">
+                TEST DE CENTRAGE
+            </h1>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="content-box">
+                <p>Si vous voyez ceci, le CSS de base fonctionne.</p>
+                <p>Le titre ci-dessus (TEST DE CENTRAGE) doit être grand, rouge, et au milieu de la page.</p>
+                <p>Ce bloc de texte doit être centré sur la page, mais le texte lui-même doit être aligné à gauche.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
