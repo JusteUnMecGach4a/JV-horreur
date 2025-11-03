@@ -3,13 +3,13 @@
 
 /* Variables pour le Thème Gothique */
 :root {
-    --color-dark: #080808; /* Encore plus sombre */
-    --color-accent: #ff2222; /* Rouge légèrement plus doux */
-    --color-text: #f0f0f0; /* Blanc cassé */
-    --color-subtle: #a0a0a0; /* Gris pour le texte secondaire */
-    --color-box: #121212; /* Gris très sombre pour les cartes */
-    --color-box-border: #500000; /* Bordure sombre pour les sections */
-    --color-modal-bg: rgba(0, 0, 0, 0.95); /* Fond de modale très sombre */
+    --color-dark: #080808; 
+    --color-accent: #ff2222; 
+    --color-text: #f0f0f0; 
+    --color-subtle: #a0a0a0; 
+    --color-box: #121212; 
+    --color-box-border: #500000; 
+    --color-modal-bg: rgba(0, 0, 0, 0.95); 
 }
 
 body {
@@ -20,12 +20,12 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.7; 
-    scroll-behavior: smooth; /* Défilement fluide pour la navigation */
+    scroll-behavior: smooth; 
 }
 
 /* Conteneur principal pour centrer le contenu */
 .container {
-    max-width: 1000px; /* Légèrement plus large */
+    max-width: 1000px; 
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
@@ -37,7 +37,7 @@ body {
 .header {
     background: linear-gradient(180deg, rgba(20, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
     padding: 2.5rem 0 1rem; 
-    box-shadow: 0 4px 15px rgba(255, 34, 34, 0.15); /* Ombre accentuée */
+    box-shadow: 0 4px 15px rgba(255, 34, 34, 0.15); 
     border-bottom: 2px solid var(--color-accent);
 }
 
@@ -48,7 +48,7 @@ body {
     color: var(--color-accent);
     letter-spacing: 0.15em;
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px rgba(255, 34, 34, 0.9); /* Lueur rouge plus intense */
+    text-shadow: 0 0 10px rgba(255, 34, 34, 0.9); 
 }
 
 @media (min-width: 640px) {
@@ -67,7 +67,7 @@ body {
 .nav {
     padding: 0.5rem 0;
     background-color: #101010;
-    position: sticky; /* Rendre la nav flottante */
+    position: sticky; 
     top: 0;
     z-index: 50;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
@@ -116,13 +116,13 @@ main {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
     border: 1px solid var(--color-box-border);
-    border-left: 6px solid var(--color-accent); /* Ligne plus épaisse */
+    border-left: 6px solid var(--color-accent); 
     text-align: left;
 }
 
 .era-container {
     display: grid;
-    gap: 4rem; /* Plus d'espace entre les boîtes */
+    gap: 4rem; 
 }
 
 /* Optimisation de la grille pour les grands écrans */
@@ -141,7 +141,6 @@ main {
     margin-bottom: 1.5rem;
     text-shadow: 0 0 5px rgba(255, 34, 34, 0.5);
     text-align: center;
-    /* Ligne décorative sous le titre */
     border-bottom: 1px dashed var(--color-subtle); 
     padding-bottom: 0.5rem;
 }
@@ -161,10 +160,10 @@ main {
     border: 2px solid var(--color-box-border);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
-    min-height: 350px; /* Pour aligner les boîtes sur le même niveau */
-    display: block; /* S'assurer que le lien remplisse bien le bloc */
-    color: inherit; /* Hériter de la couleur du texte */
-    text-decoration: none; /* Supprimer la soulignement du lien */
+    min-height: 350px; 
+    display: block; 
+    color: inherit; 
+    text-decoration: none; 
 }
 
 /* Nouvelle classe pour le conteneur de lien */
@@ -175,7 +174,7 @@ main {
 }
 
 .content-box:hover {
-    transform: translateY(-8px); /* Effet de survol plus marqué */
+    transform: translateY(-8px); 
     box-shadow: 0 15px 30px rgba(255, 34, 34, 0.4);
 }
 
@@ -186,7 +185,7 @@ main {
 
 /* EXEMPLES CLÉS STYLING (Nouvelle mise en page) */
 #exemples {
-    border-left: none; /* Pas de ligne rouge pour cette section centrale */
+    border-left: none; 
     border: 2px solid var(--color-box-border);
     padding: 3rem;
 }
@@ -196,7 +195,7 @@ main {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive Grid pour les exemples */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -210,7 +209,7 @@ main {
     transition: transform 0.3s, background-color 0.3s;
     cursor: pointer;
     text-align: left;
-    height: 100%; /* S'assurer qu'ils remplissent la grille */
+    height: 100%; 
 }
 
 .example-list li:hover {
@@ -258,7 +257,7 @@ main {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
-/* MODALE STYLING (inchangé pour la fonctionnalité) */
+/* MODALE STYLING */
 .modal {
     display: none; 
     position: fixed; 
